@@ -1,0 +1,72 @@
+[project]
+name = "udl-notebooks"
+version = "0.1.0"
+description = "Environment and helper utilities for working through the 'Understanding Deep Learning' book notebooks."
+authors = [ { name = "Your Name" } ]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+keywords = ["deep-learning", "notebooks", "education", "pytorch", "udl"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+# Core runtime + notebook + modeling dependencies
+# Torch here will pull the CPU build from PyPI. For CUDA, see README instructions.
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "pandas>=2.2",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "tqdm>=4.66",
+  "torch>=2.3",
+  "torchvision>=0.18",
+  "torchaudio>=2.3",
+  "scikit-learn>=1.4",
+  "einops>=0.7",
+  "pillow>=10.3",
+  "jupyterlab>=4.2",
+  "ipykernel>=6.29",
+  "notebook>=7.1",
+  "rich>=13.7",
+  "tensorboard>=2.16",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Additional visualization tools
+viz = ["plotly>=5.22", "networkx>=3.2"]
+# NLP + datasets (later chapters / extensions)
+nlp = ["tokenizers>=0.15", "transformers>=4.41", "datasets>=2.19"]
+# Dev / quality tooling
+dev = ["pytest>=8.2", "ruff>=0.5", "mypy>=1.10", "pre-commit>=3.7", "black>=24.4"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# Prefer a local .venv inside the project root
+package = true
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = []
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+addopts = "-q"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true

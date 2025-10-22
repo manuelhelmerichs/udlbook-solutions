@@ -1,0 +1,25 @@
+# Virtual env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+*.egg-info/
+
+# Caches / tooling
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.cache/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
