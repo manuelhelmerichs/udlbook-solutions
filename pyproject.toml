@@ -26,23 +26,3 @@ dependencies = [
   "rich>=13.7",
   "pyyaml>=6.0",
 ]
-
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
-[tool.uv]
-package = true
-
-[tool.ruff]
-line-length = 100
-select = ["E", "F", "I", "B", "UP", "SIM"]
-ignore = []
-
-[tool.black]
-line-length = 100
-
-[tool.mypy]
-python_version = "3.11"
-strict = false
-ignore_missing_imports = true

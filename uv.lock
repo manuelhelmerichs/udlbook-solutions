@@ -1962,7 +1962,7 @@ wheels = [
 [[package]]
 name = "udl"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "einops" },
     { name = "ipykernel" },
